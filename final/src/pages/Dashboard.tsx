@@ -6,7 +6,7 @@ import { getMentorsPage } from "../api";
 
 export default function Dashboard() {
     const [mentorPage, setMentorPage] = useState<MentorPage>();
-    const [actualPage, setActualPage] = useState(0);
+    const [actualPage, setActualPage] = useState(1);
     const [errorMsg, setErrorMsg] = useState("");
     const { token } = useContext(AuthContext);
 

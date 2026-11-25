@@ -16,7 +16,7 @@ api.interceptors.response.use(
             // Limpiar datos de sesión
             localStorage.removeItem('token');
             // Redirigir al login
-            window.location.href = '/api/auth/login';
+            window.location.href = '/login';
         }
         return Promise.reject(error);
     });
