@@ -5,9 +5,11 @@ import Dashboard from "./pages/Dashboard";
 import MentorDetail from "./pages/MentorDetail";
 import MyRequests from "./pages/MyRequests";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return <BrowserRouter>
+  <Navbar></Navbar>
     <Routes>
       <Route path="/" element={<Register></Register>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>

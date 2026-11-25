@@ -32,15 +32,15 @@ export async function postLogin(body:StudEmailPass):Promise<LoginResponse> {
     return data;
 }
 
-export async function getMentorsPage(token: string): Promise<MentorPage> {
-    const {data} = await api.get("/api/mentors", {
+export async function getMentorsPage(token: string, actualPage: number, pageSize: number): Promise<MentorPage> {
+    const {data} = await api.get(`/api/mentors?page=${actualPage}&size=${pageSize}`, {
         headers: {Authorization: `Bearer ${token}`}
     });
     return data;
 }
 
 export async function getMentorDetail(id:number, token: string): Promise<MentorItem> {
-    const {data} = await api.get("/api/mentors/:id", {
+    const {data} = await api.get(`/api/mentors/${id}`, {
         headers: {Authorization: `Bearer ${token}`}
     });
     return data;
