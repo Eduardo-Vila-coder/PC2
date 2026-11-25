@@ -32,11 +32,10 @@ export default function Dashboard() {
             <p>Especialidad: {m.specialty}</p>
             <p>Modalidad: {m.modality}</p>
             <p>Reservas disponibles: {m.availableSlots}</p>
-            <p>Descripcion: {m.description}</p>
             <br />
         </div>)}
 
-        {mentorPage && <Pagination actualPage={mentorPage.page} totalPages={mentorPage.totalPages}
-            goNext={() => setActualPage(n => n + 1)} goPrev={() => setActualPage(n => n - 1)}></Pagination>}
+        {mentorPage ? <Pagination actualPage={mentorPage.page} totalPages={mentorPage.totalPages}
+            goNext={() => setActualPage(n => n + 1)} goPrev={() => setActualPage(n => n - 1)}></Pagination> : <p>No hay mentores</p>}
     </>
 }
